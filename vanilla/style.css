@@ -1,0 +1,41 @@
+.calendar {
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 0.25rem;
+  table-layout: fixed;
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 1rem;
+}
+
+.calendar th {
+  color: black;
+  font-weight: normal;
+  padding: .75rem;
+  vertical-align: top;
+  border-top: 1px solid #eceeef;
+}
+
+.calendar td {
+  border-color: #e7ebf3;
+  height: 100px;
+  padding: .75rem;
+  vertical-align: top;
+  border-top: 1px solid #eceeef;
+}
+
+.calendar td:hover {
+  background: #e7ebf3;
+}
+
+.calendar tr:nth-child(2) td {
+  /*border-top: 0!important;*/
+  /*border-top: 1px solid #777981!important;*/
+}
+
+/*.calendar button {*/
+  /*width: 90%;*/
+  /*font-size: 12px!important;*/
+  /*padding: 0.2rem!important;*/
+/*}*/

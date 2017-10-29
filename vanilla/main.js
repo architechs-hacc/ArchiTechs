@@ -1,3 +1,9 @@
+
+// Cache of moment object that contains all kinds of information about this moment in time
+var now = moment();
+
+document.getElementById('next').addEventListener('click', getNextMonth);
+
 makeCalendar();
 
 function makeCalendar() {
@@ -29,8 +35,6 @@ function makeCalendar() {
 function getCalendar() {
   // Array that will store calendar data
   var calendar = [];
-  // Cache of moment object that contains all kinds of information about this moment in time
-  var now = moment();
   // Numeric value of starting week and ending week of the month, relative to the whole year
   var startWeek = now.startOf('month').week(),
       endWeek = now.endOf('month').week();
@@ -49,6 +53,11 @@ function getCalendar() {
   }
 
   return calendar;
+}
+
+function getNextMonth() {
+  now.add(1, 'months');
+  makeCalendar();
 }
 
 /*
