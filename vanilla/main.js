@@ -3,8 +3,12 @@
 var now = moment();
 
 document.getElementById('next').addEventListener('click', getNextMonth);
+document.getElementById('prev').addEventListener('click', getPrevMonth);
+
+
 
 makeCalendar();
+updateMonth();
 
 function makeCalendar() {
   // Calendar object
@@ -58,6 +62,18 @@ function getCalendar() {
 function getNextMonth() {
   now.add(1, 'months');
   makeCalendar();
+  updateMonth();
+}
+
+function getPrevMonth() {
+  now.subtract(1, 'months');
+  makeCalendar();
+  updateMonth();
+}
+
+function updateMonth() {
+  console.log('updateMonth called', now.format('MMMM'));
+  document.getElementById('month').textContent = now.format('MMMM');
 }
 
 /*
