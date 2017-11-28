@@ -1,0 +1,11 @@
+C:\Users\ilung\Documents\hacc\pipe\vanilla\vanilla\bin\Debug\netcoreapp2.0\vanilla.deps.json
+C:\Users\ilung\Documents\hacc\pipe\vanilla\vanilla\bin\Debug\netcoreapp2.0\vanilla.runtimeconfig.json
+C:\Users\ilung\Documents\hacc\pipe\vanilla\vanilla\bin\Debug\netcoreapp2.0\vanilla.runtimeconfig.dev.json
+C:\Users\ilung\Documents\hacc\pipe\vanilla\vanilla\bin\Debug\netcoreapp2.0\vanilla.dll
+C:\Users\ilung\Documents\hacc\pipe\vanilla\vanilla\bin\Debug\netcoreapp2.0\vanilla.pdb
+C:\Users\ilung\Documents\hacc\pipe\vanilla\vanilla\obj\Debug\netcoreapp2.0\vanilla.csprojResolveAssemblyReference.cache
+C:\Users\ilung\Documents\hacc\pipe\vanilla\vanilla\obj\Debug\netcoreapp2.0\vanilla.csproj.CoreCompileInputs.cache
+C:\Users\ilung\Documents\hacc\pipe\vanilla\vanilla\obj\Debug\netcoreapp2.0\vanilla.AssemblyInfoInputs.cache
+C:\Users\ilung\Documents\hacc\pipe\vanilla\vanilla\obj\Debug\netcoreapp2.0\vanilla.AssemblyInfo.cs
+C:\Users\ilung\Documents\hacc\pipe\vanilla\vanilla\obj\Debug\netcoreapp2.0\vanilla.dll
+C:\Users\ilung\Documents\hacc\pipe\vanilla\vanilla\obj\Debug\netcoreapp2.0\vanilla.pdb

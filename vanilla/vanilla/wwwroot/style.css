@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  width: 80%;
+}
+
+.calendar {
+  overflow: hidden;
+  border-collapse: separate;
+  border-spacing: 0;
+  border-radius: 0.25rem;
+  table-layout: fixed;
+  width: 70%;
+  margin-bottom: 1rem;
+}
+
+.calendar th {
+  color: black;
+  font-weight: normal;
+  padding: .75rem;
+  vertical-align: top;
+  border-top: 1px solid #eceeef;
+}
+
+.calendar td {
+  border-color: #e7ebf3;
+  height: 100px;
+  padding: .75rem;
+  vertical-align: top;
+  border-top: 1px solid #eceeef;
+}
+
+.calendar td:hover {
+  background: #e7ebf3;
+}
+
+.box {
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.side-bar {
+  width: 20%;
+  height: 300px;
+}
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+}
+
+.controls .next, .controls .prev {
+  width: 30%;
+}
+
+/*.calendar button {*/
+  /*width: 90%;*/
+  /*font-size: 12px!important;*/
+  /*padding: 0.2rem!important;*/
+/*}*/
