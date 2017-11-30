@@ -21,16 +21,16 @@
   },
   "targets": {
     ".NETCoreApp,Version=v2.0": {
-      "vanilla/1.0.0": {
+      "Vanilla/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.All": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0"
         },
         "runtime": {
-          "vanilla.dll": {}
+          "Vanilla.dll": {}
         },
         "compile": {
-          "vanilla.dll": {}
+          "Vanilla.dll": {}
         }
       },
       "Libuv/1.10.0": {
@@ -3973,7 +3973,7 @@
     }
   },
   "libraries": {
-    "vanilla/1.0.0": {
+    "Vanilla/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

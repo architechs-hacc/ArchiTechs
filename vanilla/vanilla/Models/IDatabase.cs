@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Vanilla.Models
 {
-    interface IDatabase
+    public interface IDatabase
     {
         IEnumerable<Training> Get();
         bool TryGet(int id, out Training training);
