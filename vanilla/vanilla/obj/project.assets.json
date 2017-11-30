@@ -12542,9 +12542,9 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "C:\\Users\\ilung\\Documents\\hacc\\pipe\\vanilla\\vanilla\\vanilla.csproj",
-      "projectName": "vanilla",
-      "projectPath": "C:\\Users\\ilung\\Documents\\hacc\\pipe\\vanilla\\vanilla\\vanilla.csproj",
+      "projectUniqueName": "C:\\Users\\ilung\\Documents\\hacc\\pipe\\vanilla\\vanilla\\Vanilla.csproj",
+      "projectName": "Vanilla",
+      "projectPath": "C:\\Users\\ilung\\Documents\\hacc\\pipe\\vanilla\\vanilla\\Vanilla.csproj",
       "packagesPath": "C:\\Users\\ilung\\.nuget\\packages\\",
       "outputPath": "C:\\Users\\ilung\\Documents\\hacc\\pipe\\vanilla\\vanilla\\obj\\",
       "projectStyle": "PackageReference",
