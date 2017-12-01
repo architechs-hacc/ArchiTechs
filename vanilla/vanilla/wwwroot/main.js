@@ -1,13 +1,13 @@
 
 // Cache of moment object that contains all kinds of information about this moment in time
 var now = moment();
+var trainings = [];
+var filteredTrainings = [];
 
 document.getElementById('next').addEventListener('click', getNextMonth);
 document.getElementById('prev').addEventListener('click', getPrevMonth);
 
-testAjax();
-
-makeCalendar();
+getTrainings();
 updateMonth();
 
 function makeCalendar() {
@@ -26,7 +26,16 @@ function makeCalendar() {
     dayFinalHtml = '';
     // Loop through the week array, add <td> Date </td> for each day of the week
     week.forEach(function (day) {
-      dayFinalHtml += dayTemplateHtml.replace(/{{day}}/g, day.date());
+      var html = `${day.date()}<br>`;
+
+      // Add a training button for each training session found for that date.
+      filteredTrainings.forEach(function (training) {
+        if (training.day === day.date()) {
+          html += `<button>Training</button>`;
+        }
+      });
+
+      dayFinalHtml += dayTemplateHtml.replace(/{{day}}/g, html);
     });
     weekFinalHtml += weekTemplateHtml.replace(/{{week}}/g, dayFinalHtml);
   });
@@ -61,77 +70,43 @@ function getCalendar() {
 
 function getNextMonth() {
   now.add(1, 'months');
+  filterTrainings();
   makeCalendar();
   updateMonth();
 }
 
 function getPrevMonth() {
   now.subtract(1, 'months');
+  filterTrainings();
   makeCalendar();
   updateMonth();
 }
 
+// Updates the month indicator UI to represent correct month.
 function updateMonth() {
-  console.log('updateMonth called', now.format('MMMM'));
   document.getElementById('month').textContent = now.format('MMMM');
 }
 
-function testAjax() {
-  console.log('testAjax called');
+function getTrainings() {
   var xhr = new XMLHttpRequest();
   xhr.onreadystatechange = function() {
     if (xhr.readyState == XMLHttpRequest.DONE) {
-      console.log('xmlhttprequest done', 'xhr.status:', xhr.status);
-
       // On success
       if (xhr.status == 200) {
-        // Convert JSON string response to an Object
-        // var dataObject = JSON.parse(xhr.responseText);
-
-        // document.getElementById("list").innerHTML = listCreateHtml(dataObject);
-        document.getElementById('test-ajax').innerHTML = xhr.responseText;
+        trainings = JSON.parse(xhr.responseText);
+        filterTrainings();
+        makeCalendar();
       }
     }
   }
 
-  xhr.open("GET", "/api/values/5", true);
+  xhr.open("GET", "/api/trainings", true);
   xhr.send();
 }
 
-/*
-var template = document.getElementById("template-list-item");
-var templateHtml = template.innerHTML;
-
-// Ajax Call
-var xhr = new XMLHttpRequest();
-xhr.onreadystatechange = function() {
-  if (xhr.readyState == XMLHttpRequest.DONE) {
-    // On success
-    if (xhr.state == 200) {
-      // Convert JSON string response to an Object
-      var dataObject = JSON.parse(xhr.responseText);
-
-      document.getElementById("list").innerHTML = listCreateHtml(dataObject);
-    }
-  }
+// Filter trainings based on current month (one that the user is looking at on the calendar).
+function filterTrainings() {
+  filteredTrainings = trainings.filter(function(training) {
+    return training.month === now.month() + 1;
+  });
 }
-
-xhr.open("GET", "/url/to/get-data/", true);
-xhr.send();
-
-// Function to generate and returns the HTML.
-// Accepts an object as a parameter
-function listCreateHtml(dataObject) {
-  var listHtml = "";
-
-  for (key in dataObject) {\
-    listHtml += templateHtml.replace(/{{id}}/g, dataObject[key]["id"])
-                            .replace(/{{name}}/g, dataObject[key]["name"])
-                            .replace(/{{city}}/g, dataObject[key]["city"])
-                            .replace(/{{state}}/g, dataObject[key]["state"])
-                            .replace(/{{url}}/g, dataObject[key]["url"]);
-  }
-
-  return listHtml;
-}
- */
