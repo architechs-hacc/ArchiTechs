@@ -31,7 +31,7 @@ function makeCalendar() {
       // Add a training button for each training session found for that date.
       filteredTrainings.forEach(function (training) {
         if (training.day === day.date()) {
-          html += `<button>Training</button>`;
+          html += `<button class="button">Training</button>`;
         }
       });
 
