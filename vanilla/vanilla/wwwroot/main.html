@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="side-bar">
+      <div class="controls">
+        <div id="prev" class="prev box">Prev</div>
+        <div id="month" class="month box">
+          Month
+        </div>
+        <div id="next" class="next box">Next</div>
+      </div>
+      <div class="info box">
+        Month: <br>
+        Date: <br>
+        Year: <br>
+      </div>
+    </div>
+
+    <table class="table calendar">
+      <thead>
+      <tr>
+        <th> Sun </th>
+        <th> Mon </th>
+        <th> Tue </th>
+        <th> Wed </th>
+        <th> Thu </th>
+        <th> Fri </th>
+        <th> Sat </th>
+      </tr>
+      </thead>
+      <tbody id="calendar">
+      </tbody>
+    </table>
+  </div>
+</body>
+<script src="moment.min.js"></script>
+<script src="main.js"></script>
+</html>
