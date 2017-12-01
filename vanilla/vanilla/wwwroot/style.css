@@ -39,6 +39,21 @@ body {
   background: #e7ebf3;
 }
 
+.box.landing {
+  border: 1px solid transparent!important;
+  display: flex;
+  flex-direction: column;
+  margin-top: 3rem;
+}
+
+.box.landing * {
+  margin: 0.25rem auto;
+}
+
+.box.input {
+  border-color: #eceeef!important;
+}
+
 .box.month {
   font-size: 1.25rem;
   font-weight: 700;
@@ -101,6 +116,20 @@ body {
 
 .button:hover, .button:focus {
   text-decoration: none;
+}
+
+.center-children * {
+  margin: auto;
+}
+
+.display {
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+}
+
+img {
+  height: 250px;
 }
 
 /*.calendar button {*/
