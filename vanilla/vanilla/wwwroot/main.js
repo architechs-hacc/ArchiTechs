@@ -3,12 +3,45 @@
 var now = moment();
 var trainings = [];
 var filteredTrainings = [];
+var selectedTraining = {};
+var isHelperOn = false;
 
 document.getElementById('next').addEventListener('click', getNextMonth);
 document.getElementById('prev').addEventListener('click', getPrevMonth);
+document.getElementById('logout').addEventListener('click', logout);
+document.getElementById('toggle').addEventListener('click', toggleHelper);
 
 getTrainings();
 updateMonth();
+loadUserInfo();
+
+function loadUserInfo() {
+  document.getElementById('name').innerText = 'Username: ' + window.localStorage.getItem('pipe-name');
+}
+
+// Clear stored user's name and email, and redirect back to landing page.
+function logout() {
+  window.localStorage.clear();
+  window.location.href = '/index.html';
+}
+
+// Toggle visibility of helper elements.
+function toggleHelper() {
+  // Get a NodeList of elements whose class name contains 'helper'.
+  var helpers = document.getElementsByClassName('helper');
+  if (isHelperOn) {
+    // Note: NodeList != normal list. We cannot use forEach function on it...
+    for (var i = 0; i < helpers.length; i++) {
+      helpers.item(i).style.display = 'none';
+    }
+  } else {
+    for (var i = 0; i < helpers.length; i++) {
+      helpers.item(i).style.display = 'block';
+    }
+  }
+
+  isHelperOn = !isHelperOn;
+}
 
 function makeCalendar() {
   // Calendar object
@@ -31,7 +64,7 @@ function makeCalendar() {
       // Add a training button for each training session found for that date.
       filteredTrainings.forEach(function (training) {
         if (training.day === day.date()) {
-          html += `<button class="button">Training</button>`;
+          html += `<button id="training-${training.id}" class="button">Training</button>`;
         }
       });
 
@@ -42,6 +75,8 @@ function makeCalendar() {
 
   // Replace the HTML of the calendar with modified HTML string
   document.getElementById('calendar').innerHTML = weekFinalHtml;
+
+  registerTrainingClicks();
 }
 
 // Inspired by https://stackoverflow.com/a/39803848
@@ -109,4 +144,22 @@ function filterTrainings() {
   filteredTrainings = trainings.filter(function(training) {
     return training.month === now.month() + 1;
   });
+}
+
+function registerTrainingClicks() {
+  filteredTrainings.forEach(function(training) {
+    document.getElementById(`training-${training.id}`).addEventListener('click', selectTraining(training));
+  });
+}
+
+// Returns callback function
+function selectTraining(training) {
+  return function() {
+    console.log(training);
+    selectedTraining = training;
+    document.getElementById('training-id').textContent = training.id;
+    document.getElementById('training-month').textContent = training.month;
+    document.getElementById('training-date').textContent = training.day;
+    document.getElementById('training-year').textContent = training.year;
+  }
 }

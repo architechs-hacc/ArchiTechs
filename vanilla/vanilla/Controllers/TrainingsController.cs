@@ -10,9 +10,9 @@ namespace Vanilla.Controllers
     [Route("api/[controller]")]
     public class TrainingsController : Controller
     {
-        IDatabase database;
+        IDatabase<Training> database;
 
-        public TrainingsController(IDatabase database)
+        public TrainingsController(IDatabase<Training> database)
         {
             this.database = database;
         }

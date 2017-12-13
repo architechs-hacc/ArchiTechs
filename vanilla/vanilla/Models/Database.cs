@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Vanilla.Models
 {
-    public class Database:IDatabase
+    public class Database:IDatabase<Training>
     {
         int nextId = 1;
         Dictionary<int, Training> trainings = new Dictionary<int, Training>();

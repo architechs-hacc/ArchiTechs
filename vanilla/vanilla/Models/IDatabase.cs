@@ -5,12 +5,12 @@ using System.Threading.Tasks;
 
 namespace Vanilla.Models
 {
-    public interface IDatabase
+    public interface IDatabase<T>
     {
-        IEnumerable<Training> Get();
-        bool TryGet(int id, out Training training);
-        Training Add(Training training);
+        IEnumerable<T> Get();
+        bool TryGet(int id, out T element);
+        T Add(T element);
         bool Delete(int id);
-        bool Update(Training training);
+        bool Update(T element);
     }
 }

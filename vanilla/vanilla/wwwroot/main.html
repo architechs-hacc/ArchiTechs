@@ -8,20 +8,49 @@
 </head>
 <body>
 
-  <div class="container">
-    <div class="side-bar">
-      <div class="controls">
-        <div id="prev" class="prev box">Prev</div>
-        <div id="month" class="month box">
-          Month
-        </div>
-        <div id="next" class="next box">Next</div>
+  <div class="top-bar">
+    <div id="name" class="name">
+      HI
+    </div>
+
+    <div class="menu">
+      <button id="toggle" class="button"> Toggle helper </button>
+      <button id="logout" class="button"> Logout </button>
+    </div>
+  </div>
+
+  <div class="side-bar">
+    <div class="helper">
+      This is your training information. Press on 'Apply' to submit or update your info.
+    </div>
+
+    <div class="info box">
+      Training ID: <span id="training-id"></span><br>
+      Month: <span id="training-month"></span><br>
+      Date: <span id="training-date"></span><br>
+      Year: <span id="training-year"></span><br>
+    </div>
+
+    <button class="button"> Apply </button>
+  </div>
+
+  <div class="main">
+    <div class="helper">
+      Click on 'Prev' to load calendars for previous months. Click on 'Next' to load calendars
+      for following months.
+    </div>
+
+    <div class="controls">
+      <div id="prev" class="prev box">Prev</div>
+      <div id="month" class="month box">
+        Month
       </div>
-      <div class="info box">
-        Month: <br>
-        Date: <br>
-        Year: <br>
-      </div>
+      <div id="next" class="next box">Next</div>
+    </div>
+
+    <div class="helper">
+      Each training on respective date is represented by a button. Click on the button to load their
+      information to the side bar on the right.
     </div>
 
     <table class="table calendar">
@@ -40,6 +69,7 @@
       </tbody>
     </table>
   </div>
+
 </body>
 <script src="moment.min.js"></script>
 <script src="main.js"></script>
